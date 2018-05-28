@@ -10,13 +10,16 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>osn</module>
+        <module>sc</module>
+        <module>commom-util</module>
+        <module>hsn</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <springversion>4.2.6.RELEASE</springversion>
         <mybatis.version>3.0.6</mybatis.version>
-        <jackson.version>1.9.10</jackson.version>
+        <jackson.version>2.5.4</jackson.version>
     </properties>
 
     <dependencies>
@@ -88,6 +91,16 @@
             <version>1.7.25</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
 
     </dependencies>
 

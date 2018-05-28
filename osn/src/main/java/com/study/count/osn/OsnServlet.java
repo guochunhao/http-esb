@@ -1,5 +1,6 @@
 package com.study.count.osn;
 
+import com.study.count.common.util.HttpClientUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -16,15 +17,17 @@ import javax.servlet.http.HttpServletRequest;
  * @since 1.0
  */
 @Controller
-@RequestMapping(value = "/osn")
 public class OsnServlet
 {
     private static final Logger logger = LoggerFactory.getLogger(OsnServlet.class);
 
-    @RequestMapping(value = "/receive")
+    @RequestMapping(value = "/osnReceive")
     @ResponseBody
     public String osnReceiveRequest(HttpServletRequest request)
     {
-        return "{'status':'0000'}";
+        logger.info("OSN receive request from User successfully");
+        String result = HttpClientUtil.sendGet("http://localhost:8081/sc/scReceive", "");
+
+        return result;
     }
 }
