@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.study.count.common.mapper.AbilityMapper">
+
+    <resultMap id="BaseResultMap" type="com.study.count.common.po.Ability" >
+        <id column="ability_id" property="abilityId" jdbcType="BIGINT" />
+        <result column="ability_en_name" property="abilityEnName" jdbcType="VARCHAR" />
+        <result column="ability_cn_name" property="abilityCnName" jdbcType="VARCHAR" />
+        <result column="ability_version" property="abilityVersion" jdbcType="VARCHAR" />
+        <result column="ability_belong" property="abilityBelong" jdbcType="VARCHAR" />
+        <result column="ctr_time" property="ctrTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+   <insert id="insertAbility" parameterType="com.study.count.common.po.Ability">
+       INSERT INTO ability(ability_id, ability_en_name, ability_cn_name, ability_version, ability_belong, ctr_time)
+       VALUES (#{abilityId, jdbcType=BIGINT}, #{abilityEnName, jdbcType=VARCHAR}, #{abilityCnName, jdbcType=VARCHAR}, #{abilityVersion, jdbcType=VARCHAR},
+       #{abilityBelong, jdbcType=VARCHAR}, #{ctrTime, jdbcType=TIMESTAMP})
+   </insert>
+</mapper>
